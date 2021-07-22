@@ -7,7 +7,6 @@ const justiceLeague = [
 //step one create a new feature branch to work from
 
 //step two add this JavaScript file to index.html
-
 //step three add the following functionality:
 // when a name is clicked on a card with the rest of their info is displayed in div .two
 // use only one event listener on div .one (event object and bubbling hint hint)
