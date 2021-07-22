@@ -10,7 +10,36 @@ const justiceLeague = [
 
 //step three add the following functionality:
 // when a name is clicked on a card with the rest of their info is displayed in div .two
-const divOne = document.querySelector(".one");
+function heroDetails(hero){
+  for (let i=0;i<justiceLeague.length;i++){
+    if(hero === justiceLeague[i].alias){
+      return justiceLeague[i]
+    }
+  }
+}
+
+function createContent(hero){
+  const info = `
+  <div id ="hero-card">
+    <p>Name: ${hero.name}</p>
+    <p>Age: ${hero.age}</p>
+    <p>Alias: ${hero.alias}</p>
+  </div>
+  `
+  return info
+}
+
+function insertHTML(info){
+  let divTwo = document.querySelector('.two')
+  divTwo.innerHTML = info
+}
+
+const divOne = document.querySelector(".one")
+divOne.addEventListener('click', (ev)=>{
+  const hero = ev.target.textContent;
+  insertHTML(createContent(heroDetails(hero)))
+})
+
 
 
 // use only one event listener on div .one (event object and bubbling hint hint)
